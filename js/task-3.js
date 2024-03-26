@@ -1,17 +1,9 @@
 function checkForSpam(message) {
-  const forbiddenWords1 = "spam";
-  const forbiddenWords2 = "sale";
-  const normMessage = message.toLowerCase();
-  const includesMessage1 = normMessage.includes(forbiddenWords1);
-  const includesMessage2 = normMessage.includes(forbiddenWords2);
+  const normalizedMessage = message.toLowerCase();
 
-  if (includesMessage1) {
-    return "true";
-  } else if (includesMessage2) {
-    return "true";
-  } else {
-    return "false";
-  }
+  return (
+    normalizedMessage.includes("spam") || normalizedMessage.includes("sale")
+  );
 }
 
 console.log(checkForSpam("Latest technology news")); // false
